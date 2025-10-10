@@ -28,7 +28,7 @@ jobs:
           echo "sha=$SHA" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image to Docker Hub
-        id: build-image
+        id: build-image-push
         env:
           DOCKERHUB_REPOSITORY: ${{ vars.DOCKERHUB_REPOSITORY }}
           IMAGE_TAG: ${{ steps.generate-tag.outputs.sha }}
